@@ -4,7 +4,7 @@
 }
 
 
-main {
+#main-background {
     background-image: url("/Assets/under_water.jpg");
     background-size: cover;
     background-repeat: no-repeat;   
