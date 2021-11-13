@@ -42,19 +42,19 @@ button {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
-.first-view-button-yes {
+#first-view-button-yes {
     background-color: green;
 }
 
-.first-view-button-no {
+#first-view-button-no {
     background-color: red;
 }
 
-.first-view-button-yes:hover {
+#first-view-button-yes:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.514);
 }
 
-.first-view-button-no:hover {
+#first-view-button-no:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.514);
 }
 
