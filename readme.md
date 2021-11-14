@@ -1,3 +1,3 @@
-Laboration 1
+# Laboration_1
 
-Inlämningsuppgift, html, css och javascript.
+Inlämningsuppgift: html, css och javascript.
