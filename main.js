@@ -1,6 +1,6 @@
   //Exit page color
-  const exitBackgroundImage = "url('/Assets/underWater.jpg')";
-  const inputNameBackgroundImage = "url('/Assets/underWater.jpg')";
+  const exitBackgroundImage = "url('Assets/underWater.jpg')";
+  const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
 
   //Get button
   const noButton = document.getElementById('first-view-button-no');
