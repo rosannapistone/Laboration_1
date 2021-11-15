@@ -1,8 +1,10 @@
   //Exit page color
   const exitBackgroundImage = "url('Assets/fish-in-bottle-background.jpg')";
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
+  //const firstDomandBackgroundImage = "url('')";
+  const seaCowBackgroundImage = "url('Assets/sea-cows.png')";
 
-  //Get button
+  //Get elements
   const noButton = document.getElementById('first-view-button-no');
   const yesButton = document.getElementById('first-view-button-yes');
   const questionText = document.getElementById('question-text');
@@ -13,6 +15,9 @@
   const submitButton = document.createElement("button");
   const mainHeadingText = document.getElementById('main-heading-text');
   const textContainer = document.getElementById('text-container');
+  const firstFirstOptionButton = document.createElement('button');
+  const firstSecondOptionButton = document.createElement('button');
+  //const userName = inputUserName.value
 
 
   //Add event listener
@@ -52,11 +57,42 @@
       })
 
       submitButton.addEventListener('click', function (){
-        console.log(inputUserName.value);
+        //questionContainer.innerHTML = inputUserName.value;
+        mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
+        //submitButton.textContent = 'Continue';
+        //submitButton.style.width = '8rem';
+        submitButton.style.display = 'none';
+        inputUserName.style.display = 'none';
+        questionText.style.display = 'initial';
+        questionText.innerHTML = 'What do you want to do?'
+
+        firstFirstOptionButton.className = 'buttons';
+            firstFirstOptionButton.style.backgroundColor = 'black';
+            firstFirstOptionButton.textContent = 'Overturn sea-cows';
+            firstFirstOptionButton.style.width = '15rem';
+            firstFirstOptionButton.style.marginBottom = '1rem';
+        firstSecondOptionButton.className = 'buttons';
+            firstSecondOptionButton.style.backgroundColor = 'black';
+            firstSecondOptionButton.textContent = 'Explore caves';
+            firstSecondOptionButton.style.width = '15rem';
+          buttonContainer.appendChild(firstFirstOptionButton);
+          buttonContainer.appendChild(firstSecondOptionButton);
     })
 
-      /* const div = document.createElement("div");
-          div.style.width = '5rem';
-          div.style.height = '5rem';
-          div.style.backgroundColor = 'red';
-          textContainer.appendChild(div);*/
+    /*firstFirstOptionButton.addEventListener('click', function (){
+        
+        questionContainer.innerHTML = inputUserName.value;
+        mainHeadingText.innerHTML = 'Welcome:'; 
+        //submitButton.textContent = 'Continue';
+        //submitButton.style.width = '8rem';
+        submitButton.style.display = 'none';
+
+        continueButton.className = 'buttons';
+          continueButton.style.backgroundColor = 'green';
+          continueButton.textContent = 'Continue';
+          continueButton.style.width = '8rem';
+          buttonContainer.appendChild(continueButton);
+
+    })*/
+
+     
