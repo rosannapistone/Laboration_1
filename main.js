@@ -1,8 +1,12 @@
-  //Exit page color
+  //Exit page color globala variabler STATE if-satser Hajenljud window.onload main
   const exitBackgroundImage = "url('Assets/fish-in-bottle-background.jpg')";
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
   //const firstDomandBackgroundImage = "url('')";
   const seaCowBackgroundImage = "url('Assets/sea-cows.png')";
+  const underWaterCaveDarkBackgroundImage = "url('Assets/underwater-cave-dark.jpg')";
+  const pushedSeaCowsBackgroundImage = "url('Assets/sea-cows-pushed.png')";
+  // Images
+  const flashlightImage = "url('Assets/flashlight.png')" ;
 
   //Get elements
   const noButton = document.getElementById('first-view-button-no');
@@ -17,6 +21,8 @@
   const textContainer = document.getElementById('text-container');
   const firstFirstOptionButton = document.createElement('button');
   const firstSecondOptionButton = document.createElement('button');
+  const pushCowButton = document.createElement('button');
+  const flashlightDiv = document.createElement('div');
   //const userName = inputUserName.value
 
 
@@ -30,7 +36,7 @@
       noButton.style.display = 'none';
       mainHeadingText.innerHTML = 'Say what? You´re a real LANDKRABBA';
       mainHeadingText.style.color = 'red';
-      questionText.innerHTML = 'I´ll now give you ONE option:';
+      questionText.innerHTML = 'I´ll now give you ONE option, or no wait, Hmmm,  I order you to press the button below. End of discussion. End.';
   })
 
  
@@ -79,9 +85,53 @@
           buttonContainer.appendChild(firstSecondOptionButton);
     })
 
-    /*firstFirstOptionButton.addEventListener('click', function (){
+        firstFirstOptionButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = seaCowBackgroundImage;
+        goldFish.style.display = 'none'; 
+        firstFirstOptionButton.style.display = 'none';
+        firstSecondOptionButton.style.display = 'none';
+        mainHeadingText.style.display = 'none';
+        questionText.style.display = 'none';
+        pushCowButton.className = 'buttons';
+        pushCowButton.style.backgroundColor = 'black';
+        pushCowButton.textContent = 'PUSH PUSH PUSH';
+        pushCowButton.style.width = '15rem';
+        buttonContainer.appendChild(pushCowButton);
+        //background.onclick = "url('Assets/underwater-cave-dark.jpg')";
         
-        questionContainer.innerHTML = inputUserName.value;
+    })
+
+   pushCowButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = pushedSeaCowsBackgroundImage;
+    })
+
+    firstSecondOptionButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = underWaterCaveDarkBackgroundImage;
+        goldFish.style.display = 'none'; 
+        mainHeadingText.innerHTML = 'Turn on the flashlight';
+        questionText.style.display = 'none';
+        flashlightDiv.className = 'domand-container';
+        questionContainer.appendChild(flashlightDiv);
+        flashlightDiv.style.height = '16rem';
+        flashlightDiv.style.width = '6.2rem';
+        flashlightDiv.style.margin = 'auto';
+        flashlightDiv.style.marginBottom = 'none';
+        //flashlightDiv.style.backgroundColor = 'red';
+        flashlightDiv.style.backgroundImage = flashlightImage;
+       
+    
+        
+
+    })
+
+   
+
+    
+        
+        /*questionContainer.innerHTML = inputUserName.value;
         mainHeadingText.innerHTML = 'Welcome:'; 
         //submitButton.textContent = 'Continue';
         //submitButton.style.width = '8rem';
@@ -91,8 +141,6 @@
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
           continueButton.style.width = '8rem';
-          buttonContainer.appendChild(continueButton);
-
-    })*/
+          buttonContainer.appendChild(continueButton);*/
 
      
