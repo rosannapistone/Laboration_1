@@ -1,17 +1,20 @@
-  //Exit page color globala variabler STATE if-satser Hajenljud window.onload main
+  // Notes: globala variabler, STATE, if-satser, Hajenljud, window.onload main
+  
+  // Background images
   const exitBackgroundImage = "url('Assets/fish-in-bottle-background.jpg')";
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
-  //const firstDomandBackgroundImage = "url('')";
   const seaCowBackgroundImage = "url('Assets/sea-cows.png')";
   const pushedSeaCowsBackgroundImage = "url('Assets/sea-cows-pushed.png')";
   const underWaterCaveDarkBackgroundImage = "url('Assets/underwater-cave-dark.jpg')";
   const underWaterCaveLightBackgroundImage = "url('Assets/underwater-cave-light.jpg')";
+  const octopusBackgroundImage = "url('Assets/octopus.jpg')";
+  const sunkedShipBackgroundImage = "url('Assets/sunked-ship.jpeg')";
 
   // Images
   const flashlightImage = "url('Assets/flashlight.png')" ;
   const uglyFish = "url('Assets/ugly"
 
-  //Get elements
+  //Get and create elements
   const noButton = document.getElementById('first-view-button-no');
   const yesButton = document.getElementById('first-view-button-yes');
   const questionText = document.getElementById('question-text');
@@ -29,15 +32,16 @@
   const continueButton = document.createElement('button');
   const secondFirstOptionButton = document.createElement('button');
   const secondSecondOptionButton = document.createElement('button');
-  //const text = document.getElementsByClassName('text');
-  //const userName = inputUserName.value
+  const whatIsGoingOnButton = document.createElement('button');
+
+  //const userName = inputUserName.value - vill göra gult
 
 
   //Add event listener
   noButton.addEventListener('click', function (){
     //Get main-background
     const background = document.getElementById('main-background');
-    //Background styling
+    //New background and styling
       background.style.backgroundImage = exitBackgroundImage;
       goldFish.style.display = 'none';
       noButton.style.display = 'none';
@@ -52,7 +56,7 @@
     yesButton.addEventListener('click', function (){
         //Get main-background
         const background = document.getElementById('main-background');
-        //Background styling
+        //New background and styling
           background.style.backgroundImage = inputNameBackgroundImage;
           yesButton.style.display = 'none';
           noButton.style.display = 'none';
@@ -72,8 +76,6 @@
       submitButton.addEventListener('click', function (){
         //questionContainer.innerHTML = inputUserName.value;
         mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
-        //submitButton.textContent = 'Continue';
-        //submitButton.style.width = '8rem';
         submitButton.style.display = 'none';
         inputUserName.style.display = 'none';
         questionText.style.display = 'initial';
@@ -101,18 +103,26 @@
         mainHeadingText.style.display = 'none';
         questionText.style.display = 'none';
         textContainer.style.background = 'none';
+
         pushCowButton.className = 'buttons';
         pushCowButton.style.backgroundColor = 'black';
         pushCowButton.textContent = 'PUSH PUSH PUSH';
         pushCowButton.style.width = '15rem';
         buttonContainer.appendChild(pushCowButton);
-        //background.onclick = "url('Assets/underwater-cave-dark.jpg')";
-        
     })
 
    pushCowButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = pushedSeaCowsBackgroundImage;
+        continueButton.className = 'buttons';
+          continueButton.style.backgroundColor = 'green';
+          continueButton.textContent = 'Continue';
+          continueButton.style.width = '15rem';
+          continueButton.style.position = 'absolute';
+          continueButton.style.top = '800px';
+          continueButton.style.right = '500px';
+          buttonContainer.appendChild(continueButton);
+          pushCowButton.style.display = 'none';
     })
 
     firstSecondOptionButton.addEventListener('click', function (){
@@ -121,6 +131,7 @@
         goldFish.style.display = 'none'; 
         mainHeadingText.innerHTML = 'Turn on the flashlight';
         questionText.style.display = 'none';
+
         flashlightDiv.className = 'domand-container';
         questionContainer.appendChild(flashlightDiv);
         flashlightDiv.style.height = '16rem';
@@ -143,9 +154,11 @@
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
           continueButton.style.width = '15rem';
-          //continueButton.style.marginBottom = '0rem';
+          continueButton.style.position = 'absolute';
+          continueButton.style.top = '800px';
+          continueButton.style.right = '500px';
           buttonContainer.appendChild(continueButton);
-    }) //Placera knappen någon annanstans. 
+    }) //Placera knappen någon annanstans - responsiv. 
 
     continueButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
@@ -173,6 +186,48 @@
 
     }) 
 
+    secondFirstOptionButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = octopusBackgroundImage;
+        setInterval(function(){
+        mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
+        mainHeadingText.style.color = 'red';
+        mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
+        },500);
+        questionText.style.display = 'none';
+        whatIsGoingOnButton.className = 'buttons';
+        buttonContainer.appendChild(whatIsGoingOnButton);
+        whatIsGoingOnButton.textContent = 'What the heck is going on?';
+        whatIsGoingOnButton.style.backgroundColor = 'red';
+        whatIsGoingOnButton.style.width = '20rem';
+        secondFirstOptionButton.style.display = 'none';
+        secondSecondOptionButton.style.display = 'none';
+        goldFish.style.display = 'none';
+    })
+
+    secondSecondOptionButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = sunkedShipBackgroundImage;
+        setInterval(function(){
+            mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
+            mainHeadingText.style.color = 'red';
+            mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
+            },500);
+            questionText.style.display = 'none';
+            whatIsGoingOnButton.className = 'buttons';
+            buttonContainer.appendChild(whatIsGoingOnButton);
+            whatIsGoingOnButton.textContent = 'What the heck is going on?';
+            whatIsGoingOnButton.style.backgroundColor = 'red';
+            whatIsGoingOnButton.style.width = '20rem';
+            secondFirstOptionButton.style.display = 'none';
+            secondSecondOptionButton.style.display = 'none';
+            goldFish.style.display = 'none';
+    })
+
+    whatIsGoingOnButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = '';
+    })
    
 
     
