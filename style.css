@@ -19,7 +19,7 @@
     height: 30rem;
 }
 
-.text {
+#text-container {
 /*flex: 1 100%;*/
 background: rgba(243, 247, 243, 0.3);
 border-radius: 1rem;

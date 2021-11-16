@@ -3,10 +3,13 @@
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
   //const firstDomandBackgroundImage = "url('')";
   const seaCowBackgroundImage = "url('Assets/sea-cows.png')";
-  const underWaterCaveDarkBackgroundImage = "url('Assets/underwater-cave-dark.jpg')";
   const pushedSeaCowsBackgroundImage = "url('Assets/sea-cows-pushed.png')";
+  const underWaterCaveDarkBackgroundImage = "url('Assets/underwater-cave-dark.jpg')";
+  const underWaterCaveLightBackgroundImage = "url('Assets/underwater-cave-light.jpg')";
+
   // Images
   const flashlightImage = "url('Assets/flashlight.png')" ;
+  const uglyFish = "url('Assets/ugly"
 
   //Get elements
   const noButton = document.getElementById('first-view-button-no');
@@ -23,6 +26,10 @@
   const firstSecondOptionButton = document.createElement('button');
   const pushCowButton = document.createElement('button');
   const flashlightDiv = document.createElement('div');
+  const continueButton = document.createElement('button');
+  const secondFirstOptionButton = document.createElement('button');
+  const secondSecondOptionButton = document.createElement('button');
+  //const text = document.getElementsByClassName('text');
   //const userName = inputUserName.value
 
 
@@ -93,6 +100,7 @@
         firstSecondOptionButton.style.display = 'none';
         mainHeadingText.style.display = 'none';
         questionText.style.display = 'none';
+        textContainer.style.background = 'none';
         pushCowButton.className = 'buttons';
         pushCowButton.style.backgroundColor = 'black';
         pushCowButton.textContent = 'PUSH PUSH PUSH';
@@ -121,11 +129,49 @@
         flashlightDiv.style.marginBottom = 'none';
         //flashlightDiv.style.backgroundColor = 'red';
         flashlightDiv.style.backgroundImage = flashlightImage;
-       
-    
-        
-
+        textContainer.style.background = 'none';
+        firstFirstOptionButton.style.display = 'none';
+        firstSecondOptionButton.style.display = 'none';
     })
+
+    flashlightDiv.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = underWaterCaveLightBackgroundImage;
+        flashlightDiv.style.display = 'none';
+        mainHeadingText.style.display = 'none';
+        continueButton.className = 'buttons';
+          continueButton.style.backgroundColor = 'green';
+          continueButton.textContent = 'Continue';
+          continueButton.style.width = '15rem';
+          //continueButton.style.marginBottom = '0rem';
+          buttonContainer.appendChild(continueButton);
+    }) //Placera knappen någon annanstans. 
+
+    continueButton.addEventListener('click', function (){
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = inputNameBackgroundImage;
+        
+        secondFirstOptionButton.className = 'buttons';
+            secondFirstOptionButton.style.backgroundColor = 'black';
+            secondFirstOptionButton.textContent = 'Scare octopus';
+            secondFirstOptionButton.style.width = '15rem';
+            secondFirstOptionButton.style.marginBottom = '1rem';
+        secondSecondOptionButton.className = 'buttons';
+            secondSecondOptionButton.style.backgroundColor = 'black';
+            secondSecondOptionButton.textContent = 'Look for wrecks';
+            secondSecondOptionButton.style.width = '15rem';
+          buttonContainer.appendChild(secondFirstOptionButton);
+          buttonContainer.appendChild(secondSecondOptionButton);
+          
+          textContainer.style.background = 'rgba(243, 247, 243, 0.3)';
+          mainHeadingText.style.display = 'initial';
+          continueButton.style.display = 'none';
+          mainHeadingText.innerHTML = 'Nice hah?';
+          questionText.style.display = 'initial';
+          questionText.innerHTML = 'What do you want to do next?';
+          goldFish.style.display = 'initial';
+
+    }) 
 
    
 
