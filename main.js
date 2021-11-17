@@ -9,6 +9,8 @@
   const underWaterCaveLightBackgroundImage = "url('Assets/underwater-cave-light.jpg')";
   const octopusBackgroundImage = "url('Assets/octopus.jpg')";
   const sunkedShipBackgroundImage = "url('Assets/sunked-ship.jpeg')";
+  const underWaterDarkBackgroundImage = "url('Assets/under-water-dark.jpg')";
+  const sharkDistantBackgroundImage = "url('Assets/sharkDistant.jpg')";
 
   // Images
   const flashlightImage = "url('Assets/flashlight.png')" ;
@@ -33,6 +35,9 @@
   const secondFirstOptionButton = document.createElement('button');
   const secondSecondOptionButton = document.createElement('button');
   const whatIsGoingOnButton = document.createElement('button');
+  const inputSharkMessage = document.createElement('input');
+  const submitMessageButton = document.createElement('button');
+  const fishImageContainer = document.getElementById('fish-container');
 
   //const userName = inputUserName.value - vill göra gult
 
@@ -76,6 +81,7 @@
       submitButton.addEventListener('click', function (){
         //questionContainer.innerHTML = inputUserName.value;
         mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
+        // Skapa p-tag gör = inputUserName.value
         submitButton.style.display = 'none';
         inputUserName.style.display = 'none';
         questionText.style.display = 'initial';
@@ -189,11 +195,7 @@
     secondFirstOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = octopusBackgroundImage;
-        setInterval(function(){
-        mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
-        mainHeadingText.style.color = 'red';
-        mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
-        },500);
+        
         questionText.style.display = 'none';
         whatIsGoingOnButton.className = 'buttons';
         buttonContainer.appendChild(whatIsGoingOnButton);
@@ -203,16 +205,21 @@
         secondFirstOptionButton.style.display = 'none';
         secondSecondOptionButton.style.display = 'none';
         goldFish.style.display = 'none';
+
+        const interval = setInterval(function(){
+            mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
+            mainHeadingText.style.color = 'red';
+            mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
+            },500);
+            whatIsGoingOnButton.addEventListener("click", function(){
+            clearInterval(interval);
+            }); 
     })
 
     secondSecondOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = sunkedShipBackgroundImage;
-        setInterval(function(){
-            mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
-            mainHeadingText.style.color = 'red';
-            mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
-            },500);
+        
             questionText.style.display = 'none';
             whatIsGoingOnButton.className = 'buttons';
             buttonContainer.appendChild(whatIsGoingOnButton);
@@ -222,15 +229,53 @@
             secondFirstOptionButton.style.display = 'none';
             secondSecondOptionButton.style.display = 'none';
             goldFish.style.display = 'none';
+
+            const interval = setInterval(function(){
+                mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
+                mainHeadingText.style.color = 'red';
+                mainHeadingText.style.display=(mainHeadingText.style.display==='none'?'':'none');
+                },500);
+                whatIsGoingOnButton.addEventListener("click", function(){
+                clearInterval(interval);
+                }); 
     })
 
     whatIsGoingOnButton.addEventListener('click', function (){
+      
         const background = document.getElementById('main-background');
-        background.style.backgroundImage = '';
+        background.style.backgroundImage = underWaterDarkBackgroundImage;
+        goldFish.style.display = 'initial';
+        mainHeadingText.innerHTML = 'Heh,' +" "+ inputUserName.value +" "+ 'sorry for interrupting but it´s a beautiful shark behind you.';
+        mainHeadingText.style.color = 'white';
+        questionText.style.display = 'initial';
+        questionText.innerHTML = 'What should you say to it?';
+        buttonContainer.appendChild(inputSharkMessage);
+        //inputSharkMessage.style.rows = '2'; Trevligt med fler rader att skriva på.
+        whatIsGoingOnButton.style.display = 'none';
+
+        submitMessageButton.className = 'buttons';
+          submitMessageButton.style.backgroundColor = 'green';
+          submitMessageButton.textContent = 'Turn around and say it!';
+          submitMessageButton.style.width = '18rem';
+          submitMessageButton.style.marginTop = '1rem';
+          buttonContainer.appendChild(submitMessageButton);
+    })
+
+    submitMessageButton.addEventListener('click', function (){
+      
+        const background = document.getElementById('main-background');
+        background.style.backgroundImage = sharkDistantBackgroundImage;
+        textContainer.style.display = 'none';
+        //goldFish.style.transform = 'rotate(7deg)';
+
+        //transform: scale(0.5) translate(-100%, -100%);
+        
+
+
     })
    
 
-    
+    // Kan man ha if - else på input, att användaren måste skriva något. om den gör det = x annars y (felmeddelande)
         
         /*questionContainer.innerHTML = inputUserName.value;
         mainHeadingText.innerHTML = 'Welcome:'; 

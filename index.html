@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game Of The Sea</title>
+    <link rel="icon" type="image/x-icon" href="Assets/fish.png">
     <script defer src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,32 +13,25 @@
 
     <main id="main-background" class="flex container justify-center align-center">
         
-
         <div class="main-content flex align-center">
-
-            <div class="fish flex">
+            <div id=fish-container class="fish flex">
                 <img id="gold-fish" src="Assets/fish.png">
             </div>
-
             <div id="text-container" class="text flex column text-center justify-center">
                 <h1 id="main-heading-text">Welcome to <font color="yellow"><sup><i>Under the Sea</i></sup></font>, the very best place on earth!
-                <br><br>
+                    <br><br>
                 </h1>
                 <div id="question-container" class="domand-container">
-                <h3 id="question-text" class="domand-text">Do you want to open the door for an unforgettable adventure?</h3>
+                    <h3 id="question-text" class="domand-text">Do you want to open the door for an unforgettable adventure?</h3>
                 </div>
                 <br><br>
                 <div id="button-container" class="buttons">
                     <button id="first-view-button-yes">YES</button>
-                    <button id="first-view-button-no">NO</button>
-                    
+                    <button id="first-view-button-no">NO</button>   
                 </div>
+            </div>  
+        </div> 
 
-            </div>
-
-            
-        </div>
-      
     </main>
     
 </body>
