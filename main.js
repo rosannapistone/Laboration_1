@@ -14,7 +14,6 @@
 
   // Images
   const flashlightImage = "url('Assets/flashlight.png')" ;
-  const uglyFish = "url('Assets/ugly"
 
   //Get and create elements
   const noButton = document.getElementById('first-view-button-no');
@@ -35,17 +34,15 @@
   const secondFirstOptionButton = document.createElement('button');
   const secondSecondOptionButton = document.createElement('button');
   const whatIsGoingOnButton = document.createElement('button');
-  const inputSharkMessage = document.createElement('input');
+  const inputSharkMessage = document.createElement('textarea');
   const submitMessageButton = document.createElement('button');
   const fishImageContainer = document.getElementById('fish-container');
-
-  //const userName = inputUserName.value - vill göra gult
 
 
   //Add event listener
   noButton.addEventListener('click', function (){
     //Get main-background
-    const background = document.getElementById('main-background');
+    const background = document.getElementById('main-background'); //Flytta upp?
     //New background and styling
       background.style.backgroundImage = exitBackgroundImage;
       goldFish.style.display = 'none';
@@ -77,11 +74,9 @@
           submitButton.textContent = 'Save';
           buttonContainer.appendChild(submitButton);
       })
-
+    
       submitButton.addEventListener('click', function (){
-        //questionContainer.innerHTML = inputUserName.value;
         mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
-        // Skapa p-tag gör = inputUserName.value
         submitButton.style.display = 'none';
         inputUserName.style.display = 'none';
         questionText.style.display = 'initial';
@@ -124,12 +119,12 @@
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
           continueButton.style.width = '15rem';
-          continueButton.style.position = 'absolute';
+          continueButton.style.position = 'relative';
           continueButton.style.top = '800px';
           continueButton.style.right = '500px';
           buttonContainer.appendChild(continueButton);
           pushCowButton.style.display = 'none';
-    })
+    })//Placera knappen någon annanstans - responsiv. 
 
     firstSecondOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
@@ -249,9 +244,9 @@
         mainHeadingText.style.color = 'white';
         questionText.style.display = 'initial';
         questionText.innerHTML = 'What should you say to it?';
-        buttonContainer.appendChild(inputSharkMessage);
-        //inputSharkMessage.style.rows = '2'; Trevligt med fler rader att skriva på.
         whatIsGoingOnButton.style.display = 'none';
+        buttonContainer.appendChild(inputSharkMessage);
+       
 
         submitMessageButton.className = 'buttons';
           submitMessageButton.style.backgroundColor = 'green';
@@ -266,27 +261,16 @@
         const background = document.getElementById('main-background');
         background.style.backgroundImage = sharkDistantBackgroundImage;
         textContainer.style.display = 'none';
-        //goldFish.style.transform = 'rotate(7deg)';
+        goldFish.style.display = 'none';
+    
 
-        //transform: scale(0.5) translate(-100%, -100%);
-        
-
+        setTimeout(function(){
+            background.style.transform = 'scale(2.5)';
+            textContainer.style.display = 'initial';
+            mainHeadingText.style.display = 'initial';
+            mainHeadingText.innerHTML = 'GAME OVER!';
+            
+        }, 3000);
 
     })
    
-
-    // Kan man ha if - else på input, att användaren måste skriva något. om den gör det = x annars y (felmeddelande)
-        
-        /*questionContainer.innerHTML = inputUserName.value;
-        mainHeadingText.innerHTML = 'Welcome:'; 
-        //submitButton.textContent = 'Continue';
-        //submitButton.style.width = '8rem';
-        submitButton.style.display = 'none';
-
-        continueButton.className = 'buttons';
-          continueButton.style.backgroundColor = 'green';
-          continueButton.textContent = 'Continue';
-          continueButton.style.width = '8rem';
-          buttonContainer.appendChild(continueButton);*/
-
-     
