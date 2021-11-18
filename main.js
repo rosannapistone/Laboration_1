@@ -1,6 +1,6 @@
-  // Notes: globala variabler, STATE, if-satser, Hajenljud, window.onload main
   
-  // Background images
+  
+  /** Background images */
   const exitBackgroundImage = "url('Assets/fish-in-bottle-background.jpg')";
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
   const seaCowBackgroundImage = "url('Assets/sea-cows.png')";
@@ -12,10 +12,11 @@
   const underWaterDarkBackgroundImage = "url('Assets/under-water-dark.jpg')";
   const sharkDistantBackgroundImage = "url('Assets/sharkDistant.jpg')";
 
-  // Images
-  const flashlightImage = "url('Assets/flashlight.png')" ;
+  /** Images posionated in divs in the functions firstSecondOptionButton and flashlightDiv */
+  const flashlightImage = "url('Assets/flashlight.png')";
+  const uglyFish = "url('Assets/ugly-fish.png')";
 
-  //Get and create elements
+  /** Elements from the html file and in this file created ones like input, textarea, button, div */
   const noButton = document.getElementById('first-view-button-no');
   const yesButton = document.getElementById('first-view-button-yes');
   const questionText = document.getElementById('question-text');
@@ -39,11 +40,14 @@
   const fishImageContainer = document.getElementById('fish-container');
 
 
-  //Add event listener
+  /**
+   * First navigation from startpage, witch is developed in html and css, function drives when the user clicks "no".           
+   * U-turn, user got only one option "yes" and next function yesbutton drives.
+   * New background image.
+   * New element styling and innerHTML.
+   */
   noButton.addEventListener('click', function (){
-    //Get main-background
     const background = document.getElementById('main-background');
-    //New background and styling
       background.style.backgroundImage = exitBackgroundImage;
       goldFish.style.display = 'none';
       noButton.style.display = 'none';
@@ -52,13 +56,13 @@
       questionText.innerHTML = 'I´ll now give you ONE option, or no wait, Hmmm,  I order you to press the button below. End of discussion. End.';
   })
 
- 
-
-    //Add event listener
+    /**             
+     * In this function the user fill in their username and sumbit.
+     * New background image.
+     * New elements, styling and innerHTML.
+     */
     yesButton.addEventListener('click', function (){
-        //Get main-background
         const background = document.getElementById('main-background');
-        //New background and styling
           background.style.backgroundImage = inputNameBackgroundImage;
           yesButton.style.display = 'none';
           noButton.style.display = 'none';
@@ -75,7 +79,10 @@
           buttonContainer.appendChild(submitButton);
       })
     
-      
+    /**             
+     * In this function the user got the first two options.
+     * New elements, styling and innerHTML.
+     */
       submitButton.addEventListener('click', function (){
         mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
         submitButton.style.display = 'none';
@@ -96,6 +103,11 @@
           buttonContainer.appendChild(firstSecondOptionButton);
     })
 
+    /**             
+     * In this function the user click button to finish task.
+     * New background image.
+     * New elements, styling and innerHTML.
+     */
         firstFirstOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = seaCowBackgroundImage;
@@ -113,17 +125,27 @@
         buttonContainer.appendChild(pushCowButton);
     })
 
+    /**             
+     * In this function the user click button to continue to next options.
+     * New background image.
+     * New elements, styling and innerHTML.
+     */
    pushCowButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = pushedSeaCowsBackgroundImage;
         continueButton.className = 'buttons';
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
-          continueButton.style.width = '15rem';
+          continueButton.style.width = '8rem';
           buttonContainer.appendChild(continueButton);
           pushCowButton.style.display = 'none';
     })
 
+    /**             
+     * In this function the user click image to finish task.
+     * New background image.
+     * New elements, styling and innerHTML.
+     */
     firstSecondOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = underWaterCaveDarkBackgroundImage;
@@ -143,21 +165,37 @@
         firstSecondOptionButton.style.display = 'none';
     })
 
+    /**             
+     * In this function the user click button to continue to next options.
+     * New elements, styling and innerHTML.
+     */
     flashlightDiv.addEventListener('click', function (){
         const background = document.getElementById('main-background');
-        background.style.backgroundImage = underWaterCaveLightBackgroundImage;
-        flashlightDiv.style.display = 'none';
+        background.style.backgroundImage = underWaterCaveDarkBackgroundImage;
+        
+        flashlightDiv.className = 'domand-container';
+        questionContainer.appendChild(flashlightDiv);
+        flashlightDiv.style.height = '11rem';
+        flashlightDiv.style.width = '15rem';
+        flashlightDiv.style.margin = 'auto';
+        flashlightDiv.style.marginBottom = 'none';
+        flashlightDiv.style.backgroundImage = uglyFish;
         mainHeadingText.style.display = 'none';
         continueButton.className = 'buttons';
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
-          continueButton.style.width = '15rem';
+          continueButton.style.width = '8rem';
           buttonContainer.appendChild(continueButton);
     }) 
 
+    /**             
+     * In this function the user got the second two options.
+     * New elements, styling and innerHTML.
+     */
     continueButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = inputNameBackgroundImage;
+        flashlightDiv.style.display = 'none';
         
         secondFirstOptionButton.className = 'buttons';
             secondFirstOptionButton.style.backgroundColor = 'black';
@@ -178,9 +216,13 @@
           questionText.style.display = 'initial';
           questionText.innerHTML = 'What do you want to do next?';
           goldFish.style.display = 'initial';
-
     }) 
 
+    /**             
+     * In this function the user click button to continue to cliffhanger.
+     * New elements, styling and innerHTML.
+     * set- and clearInterval is used.
+     */
     secondFirstOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = octopusBackgroundImage;
@@ -194,7 +236,7 @@
         secondFirstOptionButton.style.display = 'none';
         secondSecondOptionButton.style.display = 'none';
         goldFish.style.display = 'none';
-
+       
         const interval = setInterval(function(){
             mainHeadingText.innerHTML = 'ERROR! ERROR! ERROR!';
             mainHeadingText.style.color = 'red';
@@ -205,6 +247,11 @@
             }); 
     })
 
+    /**             
+     * In this function the user click button to continue to cliffhanger.
+     * New elements, styling and innerHTML.
+     * set- and clearInterval is used.
+     */
     secondSecondOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
         background.style.backgroundImage = sunkedShipBackgroundImage;
@@ -229,35 +276,45 @@
                 }); 
     })
 
+    /**             
+     * In this function presents user to cliffhanger.
+     * New elements, styling and innerHTML.
+     * Textarea for message.
+     * Submit for final function.
+     */
     whatIsGoingOnButton.addEventListener('click', function (){
-      
         const background = document.getElementById('main-background');
         background.style.backgroundImage = underWaterDarkBackgroundImage;
         goldFish.style.display = 'initial';
-        mainHeadingText.innerHTML = 'Heh,' +" "+ inputUserName.value +" "+ 'sorry for interrupting but it´s a beautiful shark behind you.';
+        mainHeadingText.innerHTML = 'Heh,' +" "+ inputUserName.value +" "+ 'sorry for interrupting but... it´s a shark behind you.';
         mainHeadingText.style.color = 'white';
+        mainHeadingText.style.padding = '0.2rem';
         questionText.style.display = 'initial';
+        questionText.style.marginTop = '2rem';
         questionText.innerHTML = 'What should you say to it?';
         whatIsGoingOnButton.style.display = 'none';
         buttonContainer.appendChild(inputSharkMessage);
        
-
         submitMessageButton.className = 'buttons';
           submitMessageButton.style.backgroundColor = 'green';
           submitMessageButton.textContent = 'Turn around and say it!';
           submitMessageButton.style.width = '16rem';
           submitMessageButton.style.marginTop = '1rem';
+          submitMessageButton.style.marginBottom = '1rem';
           buttonContainer.appendChild(submitMessageButton);
     })
 
+    /**             
+     * Final function.
+     * New elements, styling and innerHTML.
+     * setTimeout and setInterval is used.
+     */
     submitMessageButton.addEventListener('click', function (){
-      
-        const background = document.getElementById('main-background');
+      const background = document.getElementById('main-background');
         background.style.backgroundImage = sharkDistantBackgroundImage;
         textContainer.style.display = 'none';
         goldFish.style.display = 'none';
     
-
         setTimeout(function(){
             background.style.transform = 'scale(2.5)';
             textContainer.style.display = 'initial';
@@ -267,7 +324,6 @@
             questionText.style.display = 'initial';
             questionContainer.style.display = 'initial';
             
-            
             const interval = setInterval(function(){
                 questionText.innerHTML = 'GAME OVER!';
                 questionText.style.marginTop = '110px';
@@ -276,5 +332,3 @@
                 },1000);
         }, 4000);
     })
-   
-  
