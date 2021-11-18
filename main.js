@@ -42,7 +42,7 @@
   //Add event listener
   noButton.addEventListener('click', function (){
     //Get main-background
-    const background = document.getElementById('main-background'); //Flytta upp?
+    const background = document.getElementById('main-background');
     //New background and styling
       background.style.backgroundImage = exitBackgroundImage;
       goldFish.style.display = 'none';
@@ -119,12 +119,9 @@
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
           continueButton.style.width = '15rem';
-          continueButton.style.position = 'relative';
-          continueButton.style.top = '800px';
-          continueButton.style.right = '500px';
           buttonContainer.appendChild(continueButton);
           pushCowButton.style.display = 'none';
-    })//Placera knappen någon annanstans - responsiv. 
+    })
 
     firstSecondOptionButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
@@ -139,7 +136,6 @@
         flashlightDiv.style.width = '6.2rem';
         flashlightDiv.style.margin = 'auto';
         flashlightDiv.style.marginBottom = 'none';
-        //flashlightDiv.style.backgroundColor = 'red';
         flashlightDiv.style.backgroundImage = flashlightImage;
         textContainer.style.background = 'none';
         firstFirstOptionButton.style.display = 'none';
@@ -155,11 +151,8 @@
           continueButton.style.backgroundColor = 'green';
           continueButton.textContent = 'Continue';
           continueButton.style.width = '15rem';
-          continueButton.style.position = 'absolute';
-          continueButton.style.top = '800px';
-          continueButton.style.right = '500px';
           buttonContainer.appendChild(continueButton);
-    }) //Placera knappen någon annanstans - responsiv. 
+    }) 
 
     continueButton.addEventListener('click', function (){
         const background = document.getElementById('main-background');
@@ -267,10 +260,17 @@
         setTimeout(function(){
             background.style.transform = 'scale(2.5)';
             textContainer.style.display = 'initial';
-            mainHeadingText.style.display = 'initial';
-            mainHeadingText.innerHTML = 'GAME OVER!';
             
+            const interval = setInterval(function(){
+                mainHeadingText.innerHTML = 'GAME OVER!';
+                mainHeadingText.style.color = 'red';
+                mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
+                },500);
+            
+            textContainer.style.background = 'none';
+            questionText.style.display = 'none';
+            buttonContainer.style.display = 'none';    
         }, 3000);
-
     })
+   
    
