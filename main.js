@@ -1,5 +1,3 @@
-  
-  
   /** Background images */
   const exitBackgroundImage = "url('Assets/fish-in-bottle-background.jpg')";
   const inputNameBackgroundImage = "url('Assets/underWater.jpg')";
