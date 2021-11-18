@@ -83,7 +83,7 @@ button {
 @media all and (max-width: 480px) {
     .main-content {justify-content: center;}
     .fish {display: none;}
-    .text {width: 15rem;
+    #text-container {width: 17rem;
             height: 27rem;
     }
 }

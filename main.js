@@ -75,6 +75,7 @@
           buttonContainer.appendChild(submitButton);
       })
     
+      
       submitButton.addEventListener('click', function (){
         mainHeadingText.innerHTML = 'Welcome' +" "+ inputUserName.value; 
         submitButton.style.display = 'none';
@@ -213,7 +214,7 @@
             buttonContainer.appendChild(whatIsGoingOnButton);
             whatIsGoingOnButton.textContent = 'What the heck is going on?';
             whatIsGoingOnButton.style.backgroundColor = 'red';
-            whatIsGoingOnButton.style.width = '20rem';
+            whatIsGoingOnButton.style.width = '18rem';
             secondFirstOptionButton.style.display = 'none';
             secondSecondOptionButton.style.display = 'none';
             goldFish.style.display = 'none';
@@ -244,7 +245,7 @@
         submitMessageButton.className = 'buttons';
           submitMessageButton.style.backgroundColor = 'green';
           submitMessageButton.textContent = 'Turn around and say it!';
-          submitMessageButton.style.width = '18rem';
+          submitMessageButton.style.width = '16rem';
           submitMessageButton.style.marginTop = '1rem';
           buttonContainer.appendChild(submitMessageButton);
     })
@@ -260,17 +261,20 @@
         setTimeout(function(){
             background.style.transform = 'scale(2.5)';
             textContainer.style.display = 'initial';
+            textContainer.style.background = 'none';
+            buttonContainer.style.display = 'none';
+            mainHeadingText.style.display = 'none';
+            questionText.style.display = 'initial';
+            questionContainer.style.display = 'initial';
+            
             
             const interval = setInterval(function(){
-                mainHeadingText.innerHTML = 'GAME OVER!';
-                mainHeadingText.style.color = 'red';
-                mainHeadingText.style.display=(mainHeadingText.style.display=='none'?'':'none');
-                },500);
-            
-            textContainer.style.background = 'none';
-            questionText.style.display = 'none';
-            buttonContainer.style.display = 'none';    
-        }, 3000);
+                questionText.innerHTML = 'GAME OVER!';
+                questionText.style.marginTop = '110px';
+                questionText.style.color = 'red';
+                questionText.style.display=(questionText.style.display=='none'?'':'none');
+                },1000);
+        }, 4000);
     })
    
-   
+  
